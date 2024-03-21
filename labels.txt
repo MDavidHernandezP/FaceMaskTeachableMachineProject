@@ -1,3 +1,0 @@
-0 Class 1. Cubrebocas bien colocado
-1 Class 2. Cubrebocas mal colocado
-2 Class 3. Sin Cubrebocas
