@@ -83,11 +83,11 @@ Model Training: Using Teachable Machine, I trained a classification model with t
 
 Model Integration: The trained model was integrated into a Python application. Using OpenCV, the application processed video feeds and applied the model to detect facemasks in real-time.
 
-![Model Integration](images/collection.png)
+![Model Integration]()
 
 Real-Time Prediction: The application continuously analyzed the video feed, providing immediate feedback on whether a facemask was detected.
 
-![Prediction](images/train.png)
+![Prediction]()
 
 ## Expectations for future
 
