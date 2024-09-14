@@ -4,7 +4,7 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5.5-blue.svg)](https://opencv.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-1.23.5-blue.svg)](https://numpy.org/)
 
-# Deployed Job Web Scraper Web App with Terraform AWS
+# Machine Learning Face Mask Detector by using Teachable Machine
 
 This repository preserves an old project from my preparatory/high school days, where I developed a facemask detector in Python. The project utilized Teachable Machine, a web-based tool by Google that allows users to create machine learning models by simply providing images.
 
