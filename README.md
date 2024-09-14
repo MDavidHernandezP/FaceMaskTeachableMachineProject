@@ -56,14 +56,14 @@ This ZIP file contains the Keras model files as they were downloaded in 2024. Si
 1. Clone the repository:
 
     ```bash
-    git clone -b master git@github.com:MDavidHernandezP/FaceMaskTeachableMachineProject.git
+    git clone -b master git@github.com:MDavidHernandezP/MLFaceMaskDetectorTeachableMachine.git
     cd "the proyect directory"
     ```
     
     OR:
 
     ```bash
-    git clone https://github.com/MDavidHernandezP/FaceMaskTeachableMachineProject.git
+    git clone https://github.com/MDavidHernandezP/MLFaceMaskDetectorTeachableMachine.git
     cd "the proyect directory"
     ```
 
