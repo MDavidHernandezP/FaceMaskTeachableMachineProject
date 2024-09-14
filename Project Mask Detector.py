@@ -5,7 +5,7 @@ import cv2
 
 '''
 VERY IMPORTANT TO CHECK COMPATIBILITY BETWEEN LIBRARIES.
-At the last moment I ran this code 03/20/2024 I'm using python 2.11.8 and the version 2.12.0 of both Tensorflow and Keras. 
+At the last moment I ran this code 03/20/2024 I'm using python 3.11.8 and the version 3.12.0 of both Tensorflow and Keras. 
 '''
 
 # Loading the model, (you'll have to change the path to where you have the model saved).
