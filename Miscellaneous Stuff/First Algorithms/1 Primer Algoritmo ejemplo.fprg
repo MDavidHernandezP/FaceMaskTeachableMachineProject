@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="marit"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-28 04:16:07 p. m."/>
+        <attribute name="created" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjg7MDI6MDM6MDIgcC4gbS47MzAyNw=="/>
+        <attribute name="edited" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjg7MDQ6MTY6MDcgcC4gbS47MTszMTQ2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Largo" type="Integer" array="False" size=""/>
+            <declare name="Ancho" type="Integer" array="False" size=""/>
+            <declare name="&#193;rea" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escriba el valor del Largo&quot;" newline="True"/>
+            <input variable="Largo"/>
+            <output expression="&quot;Escriba el valor del Ancho&quot;" newline="True"/>
+            <input variable="Ancho"/>
+            <assign variable="&#193;rea" expression="Largo*Ancho"/>
+            <output expression="&quot;El &#225;rea del rectangulo es:&quot;" newline="True"/>
+            <output expression="&#193;rea" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

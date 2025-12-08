@@ -1,0 +1,130 @@
+#include <WiFi.h>
+#include <WifiUDP.h>
+#include <NTPClient.h>
+#include <Time.h>
+#include <TimeLib.h>
+#include <Timezone.h>
+#include <ESP32Servo.h>
+
+Servo servo;
+int Comando_entrada;
+    int PINSERVO = 13;
+    int PULSOMIN = 900;
+    int PULSOMAX = 2000;
+
+// Configurar wifi
+const char* ssid = "Modemeitor";                                                                                                
+const char* password = "sammycaguama";                                                                                       
+
+// Definir propiedades NTP
+#define NTP_OFFSET   60 * 60                                                                                               
+#define NTP_INTERVAL 60 * 1000                                                                                             
+#define NTP_ADDRESS  "pool.ntp.org"                                                                                        
+WiFiUDP ntpUDP;                                                                                                           
+NTPClient timeClient(ntpUDP, NTP_ADDRESS, NTP_OFFSET, NTP_INTERVAL);
+TimeChangeRule CDT = {"CDT", Second, Sun, Mar, 2, -360};                                                                     
+TimeChangeRule CST = {"CST", First, Sun, Nov, 2, -420};                                                                       
+Timezone CT(CDT, CST);
+time_t local, utc;
+
+const char * days[] = {"Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"} ;                        
+const char * months[] = {"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"} ;            
+
+
+void setup() 
+{
+  servo.attach(PINSERVO, PULSOMIN, PULSOMAX);
+  Serial.begin(9600);                                                                                                    
+  Serial.println("");
+  Serial.print("conectando a ");                                                                                          
+  Serial.print(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED)                                                                                    
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Conectando WiFi a ");                                                                                   
+  Serial.print(WiFi.localIP());                                                          
+  Serial.println("");
+}
+
+void loop() 
+{
+  if (WiFi.status() == WL_CONNECTED)                                                                                    
+  {   
+    timeClient.update();                                                                                                
+    unsigned long utc =  timeClient.getEpochTime();
+    local = CT.toLocal(utc);                                                                                           
+    printTime(local);                                                                                                   
+  }
+  else {                                                                                                               
+    WiFi.begin(ssid, password);
+    delay(1000);
+  }
+  delay(1000);    // Enviar una solicitud para actualizar cada 10 seg (= 10,000 ms)
+}
+
+void printTime(time_t t)                                                                                             
+{
+  Serial.println("");
+  Serial.print("Fecha local: ");
+  Serial.print(convertirTimeATextoFecha(t));
+  Serial.println("");
+  Serial.print(convertirTimeATextoHora(t));
+}
+
+String convertirTimeATextoFecha(time_t t)                                                                              
+{
+  String date = "";
+  date += days[weekday(t)-1];
+  date += ", ";
+  date += day(t);
+  date += " ";
+  date += months[month(t)-1];
+  date += ", ";
+  date += year(t);
+  return date;
+}
+
+String convertirTimeATextoFechaSinSemana(time_t t)                                                                   
+{
+  String date = "";
+  date += months[month(t)-1];
+  date += "   ";
+  date += year(t);
+  return date;
+}
+
+String convertirTimeATextoHora(time_t t)                                                                                                                                                    
+{ 
+  if(hour(t) == 15 && minute(t) == 30){   //Primera comida 
+    servo.write(180);
+    delay(2000);
+    servo.write(0);
+    delay (60000);
+  } 
+  if (hour(t) == 15 && minute(t) == 31){   //Segunda comida 
+    servo.write(180);
+    delay(2000);
+    servo.write(0);
+    delay (60000);
+  }
+  if (hour(t) == 15 && minute(t) == 32){   //Tercera comida 
+    servo.write(180);
+    delay(2000);
+    servo.write(0);
+    delay (60000);
+  } 
+  
+  String hora ="";                                                                                                    
+  if(hour(t) < 10)
+  hora += "0";
+  hora += hour(t);
+  hora += ":";
+  if(minute(t) < 10)                                                                                                  
+    hora += "0";
+  hora += minute(t);
+  return hora;
+}

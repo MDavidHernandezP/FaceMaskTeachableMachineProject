@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="marit"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-29 10:03:37 p. m."/>
+        <attribute name="created" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjk7MDk6NDc6MDggcC4gbS47MzA0OQ=="/>
+        <attribute name="edited" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjk7MTA6MDM6MzcgcC4gbS47MjszMTQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Temperatura" type="Integer" array="False" size=""/>
+            <declare name="Tutemperatura" type="Integer" array="False" size=""/>
+            <assign variable="Temperatura" expression="0"/>
+            <output expression="&quot;Escribe tu temperatura&quot;" newline="True"/>
+            <input variable="Tutemperatura"/>
+            <assign variable="Temperatura" expression="Temperatura+Tutemperatura"/>
+            <if expression="Temperatura&lt;29">
+                <then>
+                    <output expression="&quot;Si pasas&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;NO PASAS&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

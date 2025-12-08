@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="marit"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-28 04:35:46 p. m."/>
+        <attribute name="created" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjg7MDQ6MTY6NTUgcC4gbS47MzA0MQ=="/>
+        <attribute name="edited" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjg7MDQ6MzU6NDYgcC4gbS47MTszMTUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Cucharada" type="Integer" array="False" size=""/>
+            <declare name="Contador" type="Integer" array="False" size=""/>
+            <declare name="Taza" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escriba la cantidad que tiene cada cucharada&quot;" newline="True"/>
+            <input variable="Cucharada"/>
+            <assign variable="Taza" expression="0"/>
+            <assign variable="Contador" expression="0"/>
+            <while expression="Taza&lt;250">
+                <assign variable="Taza" expression="Taza+Cucharada"/>
+                <assign variable="Contador" expression="Contador+1"/>
+            </while>
+            <output expression="&quot;Se necesitan&quot;" newline="True"/>
+            <output expression="Contador" newline="True"/>
+            <output expression="&quot;Cucharadas&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="marit"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-29 10:24:41 p. m."/>
+        <attribute name="created" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjk7MTA6MDU6MDIgcC4gbS47MzAyOQ=="/>
+        <attribute name="edited" value="bWFyaXQ7TEFQVE9QLURFLUVMLUtLOzIwMjAtMTEtMjk7MTA6MjQ6NDEgcC4gbS47MjszMTQy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Primero" type="Integer" array="False" size=""/>
+            <declare name="Segundo" type="Integer" array="False" size=""/>
+            <declare name="Tercero" type="Integer" array="False" size=""/>
+            <declare name="Cuarto" type="Integer" array="False" size=""/>
+            <declare name="Quinto" type="Integer" array="False" size=""/>
+            <declare name="Sexto" type="Integer" array="False" size=""/>
+            <declare name="S&#233;ptimo" type="Integer" array="False" size=""/>
+            <declare name="Octavo" type="Integer" array="False" size=""/>
+            <assign variable="Primero" expression="1"/>
+            <assign variable="Segundo" expression="1"/>
+            <assign variable="Tercero" expression="Primero+Segundo"/>
+            <assign variable="Cuarto" expression="Segundo+Tercero"/>
+            <assign variable="Quinto" expression="Tercero+Cuarto"/>
+            <assign variable="Sexto" expression="Cuarto+Quinto"/>
+            <assign variable="S&#233;ptimo" expression="Quinto+Sexto"/>
+            <assign variable="Octavo" expression="Sexto+S&#233;ptimo"/>
+            <output expression="&quot;Escribe el T&#233;rmino que quieras ver&quot;" newline="True"/>
+            <output expression="Primero" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
